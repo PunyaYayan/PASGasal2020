@@ -6,17 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:background="@mipmap/logo_baru" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text="Silahkan Login"
-        android:textSize="20dp"
-        android:textColor="#FFFFFF"
-        android:layout_marginTop="100dp"
-        android:background="@color/colorAccent"
+        android:text="Please Login"
+        android:textSize="22dp"
+        android:textColor="#000000"
+        android:layout_marginTop="50dp"
         android:padding="10dp"
         android:layout_gravity="center"
         />
@@ -28,23 +34,25 @@
         android:id="@+id/EditTxt1"
         android:layout_gravity="center"
         android:hint="Masukkan Username"
+        android:textColorHint="#878787"
+        android:backgroundTint="#878787"
         />
     <EditText
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-
         android:id="@+id/EditTxt2"
         android:layout_gravity="center"
         android:layout_marginTop="10px"
         android:hint="Masukkan Password"
         android:inputType="textPassword"
+        android:textColorHint="#878787"
+        android:backgroundTint="#878787"
         />
     <Button
-        android:layout_width="150dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-
         android:id="@+id/Btn1"
-        android:layout_marginTop="50px"
+        android:layout_marginTop="10px"
         android:layout_gravity="center"
         android:hint="Login"
         android:background="@color/colorAccent"
