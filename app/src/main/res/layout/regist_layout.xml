@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@mipmap/new_user"
+        android:backgroundTint="#FFFFFF"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"/>
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/RegEditTxt1"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:hint="Username"
+        android:inputType="textPassword"
+        android:textColorHint="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/RegEditTxt2"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:hint="Email"
+        android:textColorHint="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/RegEditTxt3"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorHint="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        />
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/RegEditTxt4"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:textColorHint="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        />
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:id="@+id/Btn1"
+        android:layout_marginTop="10px"
+        android:layout_gravity="center"
+        android:hint="REGISTER"
+        android:textStyle="bold"
+        android:background="#FFFFFF"
+        android:textColorHint="@color/colorAccent"
+        />
+</LinearLayout>
