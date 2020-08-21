@@ -7,97 +7,115 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="#40C4FF">
 
     <ImageView
-        android:layout_width="140dp"
-        android:layout_height="140dp"
+        android:layout_width="132dp"
+        android:layout_height="111dp"
         android:layout_gravity="center"
-        android:layout_marginTop="80dp"
-        android:background="@mipmap/logo_baru" />
+        android:layout_marginTop="150dp"
+        android:background="@mipmap/imageslogin" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please Login"
-        android:textSize="22dp"
-        android:textColor="#000000"
-        android:layout_marginTop="50dp"
-        android:padding="10dp"
         android:layout_gravity="center"
-        />
-
-    <EditText
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:id="@+id/EditTxt1"
-        android:layout_gravity="center"
-        android:hint="Masukkan Username"
-        android:textColorHint="#878787"
-        android:backgroundTint="#878787"
-        />
-    <EditText
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/EditTxt2"
-        android:layout_gravity="center"
-        android:layout_marginTop="10px"
-        android:hint="Masukkan Password"
-        android:inputType="textPassword"
-        android:textColorHint="#878787"
-        android:backgroundTint="#878787"
-        />
-    <Button
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:id="@+id/Btn1"
-        android:layout_marginTop="10px"
-        android:layout_gravity="center"
-        android:hint="Login"
-        android:background="@color/colorAccent"
-        android:textColorHint="#FFFFFF"
+        android:text="Kost-an"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:textStyle="bold"
         />
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        >
-        <TextView
-            android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp">
+
+        <EditText
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="Forgot Your Login Details ?"
+            android:layout_marginTop="10dp"
+            android:id="@+id/EditTxt1"
+            android:layout_gravity="center"
+            android:hint="Masukkan Username"
+            android:textColorHint="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:textColor="#FFFFFF"
             />
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/EditTxt2"
+            android:layout_gravity="center"
+            android:layout_marginTop="10px"
+            android:hint="Masukkan Password"
+            android:inputType="textPassword"
+            android:textColorHint="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            />
+        <Button
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:id="@+id/Btn1"
+            android:layout_marginTop="10px"
+            android:layout_gravity="center"
+            android:hint="Login"
+            android:textStyle="bold"
+            android:background="#FFFFFF"
+            android:textColorHint="#40C4FF"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
+            android:text="Forgot Your Login Details ?" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
-            android:text="Reset Password"
-            android:textStyle="bold"
-            android:textColor="@color/cardview_dark_background"/>
+            android:background="#40C4FF"
+            android:hint="Reset Password"
+            android:padding="0dp"
+            android:textColorHint="#FFFFFF"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Or"/>
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:layout_gravity="center"
+            android:text="Or" />
+
+        <Button
+            android:id="@+id/BtnRegist"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
-            android:textStyle="bold"
-            android:textColor="@color/cardview_dark_background"/>
-            />
+            android:background="#40C4FF"
+            android:hint="Register"
+            android:padding="0dp"
+            android:textColorHint="#FFFFFF"
+            android:textStyle="bold" />
+        />
     </LinearLayout>
 
 </LinearLayout>

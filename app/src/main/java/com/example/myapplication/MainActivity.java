@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText txtusername;
     EditText txtpassword;
-    Button btnlogin;
+    Button btnlogin, btnreg;
 
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         txtusername = findViewById(R.id.EditTxt1);
         txtpassword = findViewById(R.id.EditTxt2);
         btnlogin    = findViewById(R.id.Btn1);
+        btnreg      = findViewById(R.id.BtnRegist);
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Coba Lagi", Toast.LENGTH_SHORT).show();
                     }
                 }
+            }
+        });
+
+        btnreg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Register.class));
             }
         });
     }
