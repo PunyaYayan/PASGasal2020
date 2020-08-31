@@ -69,7 +69,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardkuspa1"
+        android:id="@+id/secondmenu"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:layout_margin="20dp"

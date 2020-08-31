@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                         editor.putString("status", "login");
                         editor.apply();
                         // Menuju Main Menu
-                        startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                        startActivity(new Intent(getApplicationContext(), DataAdapter.class));
                     } else {
                         Toast.makeText(MainActivity.this, "Coba Lagi", Toast.LENGTH_SHORT).show();
                     }
