@@ -32,9 +32,7 @@ public class Model {
         this.poster_path = poster_path;
     }
 
-    public Boolean getAdult() {
-        return adult;
-    }
+
 
     public void setAdult(Boolean adult) {
         this.adult = adult;
@@ -55,4 +53,6 @@ public class Model {
     public void setVote_count(int vote_count) {
         this.vote_count = vote_count;
     }
+
+
 }

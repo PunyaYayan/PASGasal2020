@@ -46,8 +46,9 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
     @Override
     public void onBindViewHolder(final DatakuViewHolder holder, final int position) {
         holder.txtNama.setText(dataList.get(position).getOriginal_title());
-        holder.txtNpm.setText(dataList.get(position).getOverview());
-        Log.d("makananku", "onBindViewHolder: "+dataList.get(position).getPoster_path());
+        holder.txtdesc.setText(dataList.get(position).getOverview());
+        holder.txtyear.setText(dataList.get(position).getRelease_date());
+        Log.d("Movie", "onBindViewHolder: "+dataList.get(position).getPoster_path());
         Glide.with(holder.itemView)
                 .load(dataList.get(position).getPoster_path())
                 .override(Target.SIZE_ORIGINAL)
@@ -62,7 +63,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
     }
 
     public class DatakuViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
-        private TextView txtNama, txtNpm;
+        private TextView txtNama, txtdesc, txtyear;
         CardView card;
         ImageView ivprofile;
 
@@ -72,7 +73,9 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
             card = (CardView) itemView.findViewById(R.id.cardku);
             ivprofile = (ImageView) itemView.findViewById(R.id.ivprofile);
             txtNama = (TextView) itemView.findViewById(R.id.tvname);
-            txtNpm = (TextView) itemView.findViewById(R.id.tvdesc);
+            txtdesc = (TextView) itemView.findViewById(R.id.tvdesc);
+            txtyear = (TextView) itemView.findViewById(R.id.tvyear);
+
             itemView.setOnCreateContextMenuListener(this);
 
             itemView.setOnClickListener(new View.OnClickListener() {
