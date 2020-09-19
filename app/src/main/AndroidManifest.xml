@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListData"></activity>
+        <activity android:name=".MyApplication"></activity>
+        <activity android:name=".ModelMovieRealm" />
+        <activity android:name=".DetailMovie" />
+        <activity android:name=".ListData" />
         <activity android:name=".Register" />
         <activity android:name=".SplashScreen">
             <intent-filter>

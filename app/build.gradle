@@ -42,5 +42,6 @@ dependencies {
     implementation "androidx.cardview:cardview:1.0.0"
     implementation 'com.amitshekhar.android:android-networking:1.0.2'
 
+    apply plugin: 'realm-android'
 
 }
