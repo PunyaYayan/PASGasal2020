@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MyApplication"></activity>
         <activity android:name=".ModelMovieRealm" />
+        <activity android:name=".ListDataFavourite"/>
         <activity android:name=".DetailMovie" />
         <activity android:name=".ListData" />
         <activity android:name=".Register" />

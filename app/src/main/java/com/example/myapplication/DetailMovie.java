@@ -2,6 +2,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,6 +11,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+
 public class DetailMovie extends AppCompatActivity {
 
     Bundle extras;
@@ -17,6 +21,10 @@ public class DetailMovie extends AppCompatActivity {
     String date;
     String deskripsi;
     String path;
+
+    Realm realm;
+    RealmHelper realmHelper;
+    ModelMovieRealm movieModel;
 
     TextView tvjudul;
     ImageView ivposter;
@@ -47,5 +55,25 @@ public class DetailMovie extends AppCompatActivity {
                     .into(ivposter);
             // and get whatever type user account id is
         }
+        //Set up Realm
+        Realm.init(DetailMovie.this);
+        RealmConfiguration configuration = new RealmConfiguration.Builder().build();
+        realm = Realm.getInstance(configuration);
+
+
+        btnbookmark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                movieModel = new ModelMovieRealm();
+                movieModel.setDesc(deskripsi);
+                movieModel.setJudul(title);
+                movieModel.setPath(path);
+                movieModel.setReleaseDate(date);
+
+                realmHelper = new RealmHelper(realm);
+                realmHelper.save(movieModel);
+
+            }
+        });
     }
 }
