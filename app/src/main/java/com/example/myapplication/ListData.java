@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ public class ListData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_data);
         recyclerView = (RecyclerView) findViewById(R.id.rvdata);
+
         //addData();
         addDataOnline();
     }
@@ -69,7 +71,16 @@ public class ListData extends AppCompatActivity {
 
     }
 
-    void addDataOnline(){
+    void addDataOnline() {
+        final LoadingDialog loadingDialog = new LoadingDialog(ListData.this);
+        loadingDialog.startloadingdialog();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                loadingDialog.dismissDialog();
+            }
+        }, 1500);
         AndroidNetworking.get("https://api.themoviedb.org/3/movie/now_playing?api_key=6ac7a042ac3b7599a689eb943fa0b6d0&language=en-US")
                 .setTag("test")
                 .setPriority(Priority.LOW)
@@ -77,6 +88,7 @@ public class ListData extends AppCompatActivity {
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject response) {
+
                         // do anything with response
                         Log.d("hasiljson", "onResponse: " + response.toString());
                         //jika sudah berhasil debugm lanjutkan code dibawah ini

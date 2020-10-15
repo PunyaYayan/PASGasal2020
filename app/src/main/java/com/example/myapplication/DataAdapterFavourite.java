@@ -41,14 +41,14 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
     @Override
     public DatakuViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.adapter_rv, parent, false);
+        View view = layoutInflater.inflate(R.layout.adapter_rv_fav, parent, false);
         return new DatakuViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final DatakuViewHolder holder, final int position) {
         holder.txtNama.setText(dataList.get(position).getJudul());
-        holder.txtNpm.setText(dataList.get(position).getReleaseDate());
+        holder.txtyear.setText(dataList.get(position).getReleaseDate());
         Log.d("makananku", "onBindViewHolder: "+dataList.get(position).getPath());
         //pakai glide karena untuk nampilkan data gambar dari URL / permission / graddle
         Glide.with(holder.itemView)
@@ -66,7 +66,7 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
     }
 
     public class DatakuViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
-        private TextView txtNama, txtNpm;
+        private TextView txtNama, txtyear;
         CardView card;
         ImageView ivprofile;
 
@@ -76,7 +76,7 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
             card = (CardView) itemView.findViewById(R.id.cardku);
             ivprofile = (ImageView) itemView.findViewById(R.id.ivprofile);
             txtNama = (TextView) itemView.findViewById(R.id.tvname);
-            txtNpm = (TextView) itemView.findViewById(R.id.tvdesc);
+            txtyear = (TextView) itemView.findViewById(R.id.tvyear);
             itemView.setOnCreateContextMenuListener(this);
 
             itemView.setOnClickListener(new View.OnClickListener() {
