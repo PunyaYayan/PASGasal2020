@@ -1,8 +1,8 @@
 package com.example.myapplication;
 
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,7 +37,15 @@ public class ListDataFavourite extends AppCompatActivity {
         adapter = new DataAdapterFavourite(DataArrayList, new DataAdapterFavourite.Callback() {
             @Override
             public void onClick(int position) {
-
+//                intent ke detail fav
+                Intent move = new Intent(getApplicationContext(), DetailFavourite.class);
+                move.putExtra("title",DataArrayList.get(position).getJudul());
+                move.putExtra("judul",DataArrayList.get(position).getJudul());
+                move.putExtra("path",DataArrayList.get(position).getPath());
+                move.putExtra("date",DataArrayList.get(position).getReleaseDate());
+                move.putExtra("deskripsi",DataArrayList.get(position).getDesc());
+                // picture, desc, release, dll
+                startActivity(move);
             }
 
             @Override

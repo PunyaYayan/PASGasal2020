@@ -30,7 +30,7 @@
         android:layout_marginTop="30dp"
         android:padding="10dp"
         android:layout_gravity="center"
-        android:id="@+id/txtdeskripsi"
+        android:id="@+id/tvdesc"
         android:text="Deskripsi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
