@@ -7,31 +7,48 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="#40C4FF">
+    android:id="@+id/container"
+    android:background="@drawable/night">
 
     <ImageView
-        android:layout_width="132dp"
-        android:layout_height="111dp"
+        android:layout_width="600px"
+        android:layout_height="400px"
         android:layout_gravity="center"
-        android:layout_marginTop="150dp"
-        android:background="@mipmap/imageslogin" />
+        android:layout_marginTop="210dp"
+        android:background="@drawable/movieicon" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Kost-an"
+        android:text="MOVIE LIST"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
         android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:layout_marginBottom="20dp"
         />
+
+    <TextView
+        android:id="@+id/tv_time_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Good morning"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:layout_gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp">
+        android:layout_marginTop="20dp">
 
         <EditText
             android:layout_width="350dp"
@@ -39,9 +56,11 @@
             android:layout_marginTop="10dp"
             android:id="@+id/EditTxt1"
             android:layout_gravity="center"
-            android:hint="Masukkan Username"
+            android:hint="Username"
             android:textColorHint="#FFFFFF"
-            android:backgroundTint="#FFFFFF"
+            android:background="@drawable/edit"
+            android:paddingLeft="15dp"
+            android:drawablePadding="4dp"
             android:textColor="#FFFFFF"
             />
         <EditText
@@ -53,7 +72,8 @@
             android:hint="Masukkan Password"
             android:inputType="textPassword"
             android:textColorHint="#FFFFFF"
-            android:backgroundTint="#FFFFFF"
+            android:background="@drawable/edit"
+            android:paddingLeft="15dp"
             android:textColor="#FFFFFF"
             />
         <Button
@@ -64,8 +84,8 @@
             android:layout_gravity="center"
             android:hint="Login"
             android:textStyle="bold"
-            android:background="#FFFFFF"
-            android:textColorHint="#40C4FF"
+            android:background="#00d9ff"
+            android:textColorHint="#FFFFFF"
             />
 
     </LinearLayout>
@@ -81,15 +101,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:text="Forgot Your Login Details ?" />
+            android:text="Forgot Your Login Details ?"
+            android:textColor="#FFFFFF"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
-            android:background="#40C4FF"
             android:hint="Reset Password"
-            android:padding="0dp"
+            android:padding="1dp"
+            android:background="#00002765"
             android:textColorHint="#FFFFFF"
             android:textStyle="bold" />
     </LinearLayout>
@@ -103,17 +124,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Or" />
+            android:text="Or"
+            android:textColor="#FFFFFF"/>
 
         <Button
             android:id="@+id/BtnRegist"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
-            android:background="#40C4FF"
             android:hint="Register"
             android:padding="0dp"
             android:textColorHint="#FFFFFF"
+            android:background="#00002765"
             android:textStyle="bold" />
         />
     </LinearLayout>

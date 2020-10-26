@@ -35,6 +35,7 @@ public class DetailMovie extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_movie);
+        getSupportActionBar().hide();
         extras = getIntent().getExtras();
         tvjudul = (TextView)findViewById(R.id.tvjudul);
         tvdesc = (TextView)findViewById(R.id.tvdesc);

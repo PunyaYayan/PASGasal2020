@@ -34,6 +34,7 @@ public class ListData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_data);
         recyclerView = (RecyclerView) findViewById(R.id.rvdata);
+        getSupportActionBar().hide();
 
         //addData();
         addDataOnline();
@@ -106,10 +107,10 @@ public class ListData extends AppCompatActivity {
                                 modelku.setOverview(jsonObject.getString("overview"));
                                 modelku.setRelease_date(jsonObject.getString("release_date"));
                                 modelku.setPoster_path("https://image.tmdb.org/t/p/w500"+jsonObject.getString("poster_path"));
-                                modelku.setAdult(jsonObject.getBoolean("adult"));
-                                modelku.setVote_count(jsonObject.getInt("vote_count"));
                                 DataArrayList.add(modelku);
                             }
+
+
                             //untuk handle click
                             adapter = new DataAdapter(DataArrayList, new DataAdapter.Callback() {
                                 @Override

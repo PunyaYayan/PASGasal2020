@@ -8,6 +8,15 @@
     android:layout_height="match_parent"
     tools:context=".DetailMovie">
 
+
+    <ImageView
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/ivposter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"/>
+
     <TextView
         android:textSize="20sp"
         android:layout_margin="20dp"
@@ -19,21 +28,17 @@
         android:textStyle="bold"
         android:textColor="#AB47BC"/>
 
-    <ImageView
-        android:layout_gravity="center"
-        android:src="@mipmap/ic_launcher"
-        android:id="@+id/ivposter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
     <TextView
-        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:padding="10dp"
         android:layout_gravity="center"
         android:id="@+id/tvdesc"
         android:text="Deskripsi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:textSize="16dp"
+
         android:textColor="#000000"/>
 
     <Button
