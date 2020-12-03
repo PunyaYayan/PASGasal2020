@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -13,13 +12,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import io.realm.Realm;
@@ -30,7 +29,6 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
     private Callback callback;
     View viewku;
     int posku;
-
     Realm realm;
     RealmHelper realmHelper;
 
@@ -44,7 +42,7 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
         this.callback = callback;
         this.dataList = dataList;
         Log.d("makanan", "MahasiswaAdapter: "+dataList.size()+"");
-        RealmConfiguration configuration = new RealmConfiguration.Builder().build();
+        RealmConfiguration configuration = new RealmConfiguration.Builder().deleteRealmIfMigrationNeeded().build();
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
     }
@@ -52,18 +50,18 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
     @Override
     public DatakuViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.adapter_rv_fav, parent, false);
+        View view = layoutInflater.inflate(R.layout.adapter_rv, parent, false);
         return new DatakuViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final DatakuViewHolder holder, final int position) {
-        holder.txtNama.setText(dataList.get(position).getJudul());
-        holder.txtyear.setText(dataList.get(position).getReleaseDate());
-        Log.d("makananku", "onBindViewHolder: "+dataList.get(position).getPath());
+        holder.txtNama.setText(dataList.get(position).getTeam_name());
+        holder.txtNpm.setText(dataList.get(position).getStadium_location());
+        Log.d("makananku", "onBindViewHolder: "+dataList.get(position).getBadge_path());
         //pakai glide karena untuk nampilkan data gambar dari URL / permission / graddle
         Glide.with(holder.itemView)
-                .load(dataList.get(position).getPath())
+                .load(dataList.get(position).getBadge_path())
                 //.override(Target.SIZE_ORIGINAL)
                 .apply(new RequestOptions().override(600, 200))
                 .placeholder(R.mipmap.ic_launcher)
@@ -77,7 +75,7 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
     }
 
     public class DatakuViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
-        private TextView txtNama, txtyear;
+        private TextView txtNama, txtNpm;
         CardView card;
         ImageView ivprofile;
 
@@ -87,7 +85,7 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
             card = (CardView) itemView.findViewById(R.id.cardku);
             ivprofile = (ImageView) itemView.findViewById(R.id.ivprofile);
             txtNama = (TextView) itemView.findViewById(R.id.tvname);
-            txtyear = (TextView) itemView.findViewById(R.id.tvyear);
+            txtNpm = (TextView) itemView.findViewById(R.id.tvalter);
             itemView.setOnCreateContextMenuListener(this);
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -119,6 +117,7 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
                     break;
 
                 case 2:
+                    //Do stuff
                     DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -139,7 +138,6 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
                     AlertDialog.Builder builder = new AlertDialog.Builder(viewku.getContext());
                     builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener)
                             .setNegativeButton("No", dialogClickListener).show();
-
                     break;
             }
             return true;

@@ -1,15 +1,16 @@
 package com.example.myapplication;
 
 public class Model {
-    String original_title;
-    String release_date;
-    String poster_path;
-    Boolean adult;
-    String overview;
-    int vote_count;
+    String strTeam;
+    String strAlternate;
+    String strLeague;
+    String strStadium;
+    String strTeamBadge;
+    String strDescriptionEN;
+    String strStadiumLocation;
     int id;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -17,52 +18,59 @@ public class Model {
         this.id = id;
     }
 
-
-    public String getOriginal_title() {
-        return original_title;
+    public String getTeam_name() {
+        return strTeam;
     }
 
-    public void setOriginal_title(String original_title) {
-        this.original_title = original_title;
+    public void setTeam_name(String strTeam) {
+        this.strTeam = strTeam;
     }
 
-    public String getRelease_date() {
-        return release_date;
+    public String getAlternate_name() {
+        return strAlternate;
     }
 
-    public void setRelease_date(String release_date) {
-        this.release_date = release_date;
+    public void setAlternate_name(String strAlternate) {
+        this.strAlternate = strAlternate;
     }
 
-    public String getPoster_path() {
-        return poster_path;
+    public String getLeague() {
+        return strLeague;
     }
 
-    public void setPoster_path(String poster_path) {
-        this.poster_path = poster_path;
+    public void setLeague(String strLeague) {
+        this.strLeague = strLeague;
     }
 
-
-
-    public void setAdult(Boolean adult) {
-        this.adult = adult;
+    public String getStadium() {
+        return strStadium;
     }
 
-    public String getOverview() {
-        return overview;
+    public void setStadium(String strStadium) {
+        this.strStadium = strStadium;
     }
 
-    public void setOverview(String overview) {
-        this.overview = overview;
+    public String getBadge_path() {
+        return strTeamBadge;
     }
 
-    public int getVote_count() {
-        return vote_count;
+    public void setBadge_path(String strTeamBadge) {
+        this.strTeamBadge = strTeamBadge;
     }
 
-    public void setVote_count(int vote_count) {
-        this.vote_count = vote_count;
+    public String getDescription() {
+        return strDescriptionEN;
     }
 
+    public void setDescription(String strDescriptionEN) {
+        this.strDescriptionEN = strDescriptionEN;
+    }
 
+    public String getStadium_location() {
+        return strStadiumLocation;
+    }
+
+    public void setStadium_location(String strStadiumLocation) {
+        this.strStadiumLocation = strStadiumLocation;
+    }
 }

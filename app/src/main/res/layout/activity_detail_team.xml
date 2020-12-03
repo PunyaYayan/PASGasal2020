@@ -1,119 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailMovie">
-
-
-    <ImageView
-        android:layout_gravity="center"
-        android:src="@mipmap/ic_launcher"
-        android:id="@+id/ivposter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"/>
-
+    tools:context=".DetailTeam">
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="left"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="30dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginTop="20dp"
+            android:id="@+id/ivposter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Team name : "
-            android:textStyle="bold"
-            android:textSize="14dp"
-            android:textColor="#000000"
-            />
+            android:orientation="vertical"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Club Name :"
+                   android:textSize="15dp"
+                   android:textColor="#000000"
+                   />
+
+                <TextView
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="5dp"
+                    android:text="CLub"
+                    android:id="@+id/tvclub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alternative  :"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    />
+
+                <TextView
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="5dp"
+                    android:text="Julukan"
+                    android:id="@+id/tvclub2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="League        :"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    />
+
+                <TextView
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="5dp"
+                    android:text="Liga"
+                    android:id="@+id/tvliga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stadium      :"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    />
+
+                <TextView
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="5dp"
+                    android:text="Stadium"
+                    android:id="@+id/tvstadium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stadium Location :"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    />
+
+                <TextView
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="5dp"
+                    android:text="Location"
+                    android:id="@+id/tvlokasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Team Description :"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                />
+
+        </LinearLayout>
 
         <TextView
+            android:textColor="#000000"
+            android:id="@+id/tvdeskripsi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tvname"
-            android:text="team"
-            android:textColor="#000000"
-            android:textSize="14dp"
-            />
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="Deskripsi" />
+
+
+        <Button
+            android:id="@+id/btnbookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorAccent"
+            android:text="Bookmark"
+            android:layout_gravity="center"
+            android:textColor="#ffffff" />
+
+
+
+
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="left"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="30dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alternative name : "
-            android:textStyle="bold"
-            android:textSize="14dp"
-            android:textColor="#000000"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvalternative"
-            android:text="julukan"
-            android:textColor="#000000"
-            android:textSize="14dp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="left"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="30dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Stadium : "
-            android:textStyle="bold"
-            android:textSize="14dp"
-            android:textColor="#000000"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvstadium"
-            android:text="stadium"
-            android:textColor="#000000"
-            android:textSize="14dp"
-            />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tvdesc"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="desc"
-        android:textColor="#000000"
-        android:textSize="16dp" />
-
-    <Button
-        android:id="@+id/btnbookmark"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:text="Bookmark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-</LinearLayout>
+</ScrollView>

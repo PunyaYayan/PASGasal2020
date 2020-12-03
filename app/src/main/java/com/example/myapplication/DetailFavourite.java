@@ -1,4 +1,23 @@
 package com.example.myapplication;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.Target;
+
+import java.util.Calendar;
+
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -16,41 +35,57 @@ import io.realm.RealmConfiguration;
 
 public class DetailFavourite extends AppCompatActivity {
 
+
     Bundle extras;
-    String title;
-    String date;
-    String deskripsi;
-    String path;
+    String team;
+    String alternate;
+    String league;
+    String stadium;
+    String badge;
+    String description;
+    String location;
+    String id;
 
-    Realm realm;
-    RealmHelper realmHelper;
-    ModelMovieRealm movieModel;
-
-    TextView tvjudul;
+    TextView tvname;
+    TextView tvalternate;
+    TextView tvleague;
+    TextView tvstadium;
+    TextView tvlocation;
+    TextView tvdesc;
     ImageView ivposter;
-    TextView tvdate, tvdesc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_favourite);
-        getSupportActionBar().hide();
+        setTitle("Detail Team");
         extras = getIntent().getExtras();
-        tvjudul = (TextView) findViewById(R.id.tvjudulfav);
-        tvdesc = (TextView) findViewById(R.id.tvdescfav);
-        tvdate = (TextView) findViewById(R.id.tvdatefav);
-        ivposter = (ImageView) findViewById(R.id.ivposterfav);
+        tvname = (TextView)findViewById(R.id.tvclub);
+        tvalternate = (TextView)findViewById(R.id.tvclub2);
+        tvleague = (TextView)findViewById(R.id.tvliga);
+        tvstadium = (TextView)findViewById(R.id.tvstadium);
+        tvlocation = (TextView)findViewById(R.id.tvlokasi);
+        tvdesc = (TextView)findViewById(R.id.tvdeskripsi);
+        ivposter = (ImageView) findViewById(R.id.ivposter);
 
         if (extras != null) {
-            title = extras.getString("judul");
-            date = extras.getString("date");
-            deskripsi = extras.getString("deskripsi");
-            path = extras.getString("path");
-            tvjudul.setText(title);
-            tvdate.setText(date);
-            tvdesc.setText(deskripsi);
+            id = extras.getString("id");
+            team = extras.getString("team");
+            alternate = extras.getString("alternate");
+            league = extras.getString("league");
+            stadium = extras.getString("stadium");
+            location = extras.getString("location");
+            description = extras.getString("description");
+            badge = extras.getString("badge");
+
+            tvname.setText(team);
+            tvalternate.setText(alternate);
+            tvleague.setText(league);
+            tvstadium.setText(stadium);
+            tvlocation.setText(location);
+            tvdesc.setText(description);
             Glide.with(DetailFavourite.this)
-                    .load(path)
+                    .load(badge)
                     .override(Target.SIZE_ORIGINAL)
                     .placeholder(R.mipmap.ic_launcher)
                     .into(ivposter);

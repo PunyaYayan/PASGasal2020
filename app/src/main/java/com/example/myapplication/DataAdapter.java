@@ -1,4 +1,5 @@
 package com.example.myapplication;
+
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -14,7 +15,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.Target;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
@@ -45,13 +46,14 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
 
     @Override
     public void onBindViewHolder(final DatakuViewHolder holder, final int position) {
-        holder.txtNama.setText(dataList.get(position).getOriginal_title());
-        holder.txtdesc.setText(dataList.get(position).getOverview());
-        holder.txtyear.setText(dataList.get(position).getRelease_date());
-        Log.d("Movie", "onBindViewHolder: "+dataList.get(position).getPoster_path());
+        holder.txtNama.setText(dataList.get(position).getTeam_name());
+        holder.txtNpm.setText(dataList.get(position).getStadium());
+        Log.d("makananku", "onBindViewHolder: "+dataList.get(position).getBadge_path());
+        //pakai glide karena untuk nampilkan data gambar dari URL / permission / graddle
         Glide.with(holder.itemView)
-                .load(dataList.get(position).getPoster_path())
-                .override(Target.SIZE_ORIGINAL)
+                .load(dataList.get(position).getBadge_path())
+                //.override(Target.SIZE_ORIGINAL)
+                .apply(new RequestOptions().override(600, 200))
                 .placeholder(R.mipmap.ic_launcher)
                 .into(holder.ivprofile);
 
@@ -63,7 +65,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
     }
 
     public class DatakuViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
-        private TextView txtNama, txtdesc, txtyear;
+        private TextView txtNama, txtNpm;
         CardView card;
         ImageView ivprofile;
 
@@ -73,9 +75,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
             card = (CardView) itemView.findViewById(R.id.cardku);
             ivprofile = (ImageView) itemView.findViewById(R.id.ivprofile);
             txtNama = (TextView) itemView.findViewById(R.id.tvname);
-            txtdesc = (TextView) itemView.findViewById(R.id.tvdesc);
-            txtyear = (TextView) itemView.findViewById(R.id.tvyear);
-
+            txtNpm = (TextView) itemView.findViewById(R.id.tvalter);
             itemView.setOnCreateContextMenuListener(this);
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +96,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
         }
 
     }
+
     private final MenuItem.OnMenuItemClickListener onEditMenu = new MenuItem.OnMenuItemClickListener() {
         @Override
         public boolean onMenuItemClick(MenuItem item) {

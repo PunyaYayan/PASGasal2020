@@ -4,83 +4,50 @@
     android:id="@+id/cardku"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="15dp"
+    android:elevation="10dp"
+    app:cardElevation="10dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="20dp"
-    app:cardElevation="10dp">
+    android:layout_height="wrap_content">
+
 
     <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="5dp">
+        >
 
         <ImageView
             android:id="@+id/ivprofile"
+            android:src="@mipmap/ic_launcher_round"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/ic_launcher" />
+            android:padding="5dp"/>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/tvname"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginTop="5dp"
-                android:text="nameplace"
-                android:textColor="#E040FB"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="#000000"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Date :"
-                    android:textColor="#E040FB"/>
-
-                <TextView
-                    android:id="@+id/tvyear"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
-                    android:text="release date"
-                    android:textColor="#000000" />
-            </LinearLayout>
-
             <TextView
+                android:text="Alternative Name"
+                android:id="@+id/tvalter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Overview :"
-                android:textColor="#E040FB" />
+                android:textSize="14dp"
+                android:layout_marginTop="3dp"/>
 
-            <TextView
-                android:id="@+id/tvdesc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="descplace"
-                android:textColor="#000000"
-                android:maxLength="150"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Read more..."
-                android:textColor="#000000"
-                android:maxLength="150"/>
         </LinearLayout>
-
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

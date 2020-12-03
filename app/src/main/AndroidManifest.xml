@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".DetailFavourite"></activity>
-        <activity android:name=".DetailMovie" />
+        <activity android:name=".DetailTeam" />
         <activity android:name=".ListData" />
 
         <activity android:name=".ListDataFavourite" />

@@ -7,41 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:id="@+id/container"
-    android:background="@drawable/night">
+    android:id="@+id/container">
 
     <ImageView
-        android:layout_width="600px"
+        android:layout_width="400px"
         android:layout_height="400px"
         android:layout_gravity="center"
         android:layout_marginTop="210dp"
-        android:background="@drawable/movieicon" />
+        android:background="@drawable/ball" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="MOVIE LIST"
-        android:textColor="#FFFFFF"
+        android:text="FOOTBALL DATABASE"
+        android:textColor="#000000"
         android:textSize="30dp"
         android:textStyle="bold"
         android:fontFamily="monospace"
         android:layout_marginBottom="20dp"
         />
-
-    <TextView
-        android:id="@+id/tv_time_msg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:text="Good morning"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="20dp"
-        android:textColor="#ffffff"
-        android:layout_gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -57,7 +42,7 @@
             android:id="@+id/EditTxt1"
             android:layout_gravity="center"
             android:hint="Username"
-            android:textColorHint="#FFFFFF"
+            android:textColorHint="#000000"
             android:background="@drawable/edit"
             android:paddingLeft="15dp"
             android:drawablePadding="4dp"
@@ -71,7 +56,7 @@
             android:layout_marginTop="10px"
             android:hint="Masukkan Password"
             android:inputType="textPassword"
-            android:textColorHint="#FFFFFF"
+            android:textColorHint="#000000"
             android:background="@drawable/edit"
             android:paddingLeft="15dp"
             android:textColor="#FFFFFF"
@@ -102,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:text="Forgot Your Login Details ?"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#000000"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -111,7 +96,7 @@
             android:hint="Reset Password"
             android:padding="1dp"
             android:background="#00002765"
-            android:textColorHint="#FFFFFF"
+            android:textColorHint="#000000"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -134,7 +119,7 @@
             android:layout_marginLeft="5dp"
             android:hint="Register"
             android:padding="0dp"
-            android:textColorHint="#FFFFFF"
+            android:textColorHint="#000000"
             android:background="#00002765"
             android:textStyle="bold" />
         />

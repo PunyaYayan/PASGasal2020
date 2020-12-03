@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
     EditText txtusername;
     EditText txtpassword;
     Button btnlogin, btnreg;
-    LinearLayout constraintLayout;
-    TextView tvTimeMsg;
 
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -34,22 +32,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         pref = getSharedPreferences("login", MODE_PRIVATE);
-
-        constraintLayout = findViewById(R.id.container);
-        tvTimeMsg = (TextView) findViewById(R.id.tv_time_msg);
-        Calendar c = Calendar.getInstance();
-
-        int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
-
-        if (timeOfDay >= 0 && timeOfDay < 16) {
-            //morning
-            constraintLayout.setBackground(getDrawable(R.drawable.morning));
-            tvTimeMsg.setText("Good Morning");
-        } else if (timeOfDay >= 16 && timeOfDay < 24) {
-            //night
-            constraintLayout.setBackground(getDrawable(R.drawable.night));
-            tvTimeMsg.setText("Good Night");
-        }
 
         getSupportActionBar().hide();
 
